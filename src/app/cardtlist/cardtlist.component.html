@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let cards of cards">
+            <tr *ngIf="cards.stock" [ngClass]="{'clearance': cards.clearance}">
+                <td><img [src]="cards.image" [alt]="cards.name"></td>
+                <td>{{cards.name}}</td>
+                <td>{{cards.precio}} | currency:'ARS'</td>
+                <td>{{cards.stock}}</td>
+                <td>
+                    <div class="input-group input-group-sm mb-3">
+                        <button type="button" class="btn btn-light btn-sm" (click)="downQuatity(cards)">-</button>
+                        <input class="form-control form-control-sm" type="number" (focusout)="varifyBeerQuaantity(cards)" [(ngModel)="cards.quantity" ] />
+                        <button type="button" class="btn btn-light btn-sm" (click)="upQuantity(cards)">+</button>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
