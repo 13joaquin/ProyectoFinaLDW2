@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { CardTiSComponent } from './card-ti-s/card-ti-s.component';
 import { CardtlistComponent } from './cardtlist/cardtlist.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardtlistComponent } from './cardtlist/cardtlist.component';
     NavbarComponent,
     HomeComponent,
     CardTiSComponent,
-    CardtlistComponent
+    CardtlistComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

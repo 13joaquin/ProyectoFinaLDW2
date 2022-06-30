@@ -15,7 +15,213 @@
     <app-root></app-root>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Variables
+            const baseDeDatos = [{
+                id: 1,
+                nombre: 'ARGOM SOPORTE DE MUÑECA EN GEL PARA TECLADO NEGRO ARG-AC-1242',
+                precio: 135,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/Mousepad%20Gel%20Argom%20360%20ARG-AC-1222.jpg?alt=media&token=44ad87c1-fdd3-4de2-bc68-38eebc8624be'
+            }, {
+                id: 2,
+                nombre: 'ARGOM TECLADO BLUETOOTH LIGERO PORTATIL INGLES ARG-KB-0203',
+                precio: 135,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/ARG-KB-0203.jpg?alt=media&token=3a19157e-0a56-49c6-9183-5721e3b3116f'
+            }, {
+                id: 3,
+                nombre: 'TECLADO BLUETOOTH LOGITECH K480 CONECTA A 3 DISPOSITIVOS NEGRO ESPAÑOL',
+                precio: 420,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/26c20f6b-8793-490d-a034-9c9d8a6d364c._CR0%2C0%2C800%2C600_PT0_SX800__.jpg?alt=media&token=27ad5587-a7f4-4f26-9492-9011dccdc996'
+            }, {
+                id: 4,
+                nombre: 'MOUSE XTECH XTM-195 3 BOTONES USB CON LUZ ROJA 1000dpi',
+                precio: 23,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MOU-XT-XTM175.jpg?alt=media&token=19aa85e9-9a3e-4e29-a015-a7ad9822321f'
+            }, {
+                id: 5,
+                nombre: 'MOUSE MANHATTAN 177801 EDGE OPTICO 3BOTONES C/SCROLL AZUL USB',
+                precio: 45,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MANHATTAN_177801_ICECAT_34922424.jpg?alt=media&token=c98cbd26-0505-46ec-b6cc-21112800bcf8'
+            }, {
+                id: 6,
+                nombre: 'UDIFONO REDRAGON ARES H120 PARA GAMERS CON MICROFONO 3.5mm',
+                precio: 125,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/p_7_5_6_756-audifono-redragon-ares-h120-on-ear-con-microfono1-64a640ed38f1c1307e16086462613554-640-0.jpg?alt=media&token=b29d0504-a99d-4c2b-9cdc-30407192888e'
+            }, {
+                id: 7,
+                nombre: 'ADAPTADOR XTECH XTC-515 CONECTOR TIPO C MACHO A USB 3.0 HEMBRA',
+                precio: 32,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/XTC-515_1.jpg?alt=media&token=237647bc-03b5-4758-bb06-f6d17b13c84d'
+            }, {
+                id: 8,
+                nombre: 'MONITOR LED AOC 22B2HN 21.5" 1920x1080 VA HDMI',
+                precio: 1307,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/AOC_22B2H.jpg?alt=media&token=4d03fec6-fda7-4601-ac54-a52c76978bb8'
+            }, {
+                id: 9,
+                nombre: 'MICROSOFT OFFICE 365 PERSONAL 1 AÑO PC/MAC FORMATO ESD 1 DISPOSITIVO',
+                precio: 443,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/ms-ofis-yazilimlari_qq2-00085_-yazilim_142666_1.jpg?alt=media&token=d478bd37-488a-4e7e-b943-674faecf8c3a'
+            }, {
+                id: 10,
+                nombre: 'MONITOR LED ASUS 23.8" VP249HE 75Hz IPS 1920 x 1080 HDMI',
+                precio: 1507,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MONITOR.jpg?alt=media&token=02b8fcd1-5893-440f-814d-24f422955a86'
+            }, {
+                id: 11,
+                nombre: 'DISCO DURO EXTERNO SEAGATE ONE TOUCH 1TB USB3 ROJO',
+                precio: 552,
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/DISCO%20DURO%20EXTERNO%20SEAGATE%20ONE%20TOUCH%201TB%20USB3%20ROJO.jpg?alt=media&token=36790e2c-28b4-4c65-9949-7ecfc9707eb0'
+            }];
+
+            let carrito = [];
+            const divisa = '€';
+            const DOMitems = document.querySelector('#items');
+            const DOMcarrito = document.querySelector('#carrito');
+            const DOMtotal = document.querySelector('#total');
+            const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+
+            // Funciones
+
+            /**
+             * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+             */
+            function renderizarProductos() {
+                baseDeDatos.forEach((info) => {
+                    // Estructura
+                    const miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+                    // Body
+                    const miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+                    // Titulo
+                    const miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info.nombre;
+                    // Imagen
+                    const miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info.imagen);
+                    // Precio
+                    const miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                    // Boton 
+                    const miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info.id);
+                    miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                    // Insertamos
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    DOMitems.appendChild(miNodo);
+                });
+            }
+
+            /**
+             * Evento para añadir un producto al carrito de la compra
+             */
+            function anyadirProductoAlCarrito(evento) {
+                // Anyadimos el Nodo a nuestro carrito
+                carrito.push(evento.target.getAttribute('marcador'))
+                    // Actualizamos el carrito 
+                renderizarCarrito();
+
+            }
+
+            /**
+             * Dibuja todos los productos guardados en el carrito
+             */
+            function renderizarCarrito() {
+                // Vaciamos todo el html
+                DOMcarrito.textContent = '';
+                // Quitamos los duplicados
+                const carritoSinDuplicados = [...new Set(carrito)];
+                // Generamos los Nodos a partir de carrito
+                carritoSinDuplicados.forEach((item) => {
+                    // Obtenemos el item que necesitamos de la variable base de datos
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        // ¿Coincide las id? Solo puede existir un caso
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Cuenta el número de veces que se repite el producto
+                    const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                        // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+                    // Creamos el nodo del item del carrito
+                    const miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                    // Boton de borrar
+                    const miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.dataset.item = item;
+                    miBoton.addEventListener('click', borrarItemCarrito);
+                    // Mezclamos nodos
+                    miNodo.appendChild(miBoton);
+                    DOMcarrito.appendChild(miNodo);
+                });
+                // Renderizamos el precio total en el HTML
+                DOMtotal.textContent = calcularTotal();
+            }
+
+            /**
+             * Evento para borrar un elemento del carrito
+             */
+            function borrarItemCarrito(evento) {
+                // Obtenemos el producto ID que hay en el boton pulsado
+                const id = evento.target.dataset.item;
+                // Borramos todos los productos
+                carrito = carrito.filter((carritoId) => {
+                    return carritoId !== id;
+                });
+                // volvemos a renderizar
+                renderizarCarrito();
+            }
+
+            /**
+             * Calcula el precio total teniendo en cuenta los productos repetidos
+             */
+            function calcularTotal() {
+                // Recorremos el array del carrito 
+                return carrito.reduce((total, item) => {
+                    // De cada elemento obtenemos su precio
+                    const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                        return itemBaseDatos.id === parseInt(item);
+                    });
+                    // Los sumamos al total
+                    return total + miItem[0].precio;
+                }, 0).toFixed(2);
+            }
+
+            /**
+             * Varia el carrito y vuelve a dibujarlo
+             */
+            function vaciarCarrito() {
+                // Limpiamos los productos guardados
+                carrito = [];
+                // Renderizamos los cambios
+                renderizarCarrito();
+            }
+
+            // Eventos
+            DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+            // Inicio
+            renderizarProductos();
+            renderizarCarrito();
+        });
+    </script>
 </body>
 
 </html>
