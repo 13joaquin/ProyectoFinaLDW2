@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <ng-container *ngFor="let cards of cardss">
+        <ng-container *ngFor="let cards of cardss ">
             <tr>
                 <td>{{cards.name}}</td>
                 <td>{{cards.quantity}}</td>
@@ -30,75 +30,156 @@
                 <th>Nombre</th>
                 <th>cantidad</th>
                 <th>Precio Unitario</th>
+                <th>Rating</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+            <script>
+                document.addEventListener("keyup", e => {
+
+                    if (e.target.matches("#buscador")) {
+
+                        if (e.key === "Escape") e.target.value = ""
+
+                        document.querySelectorAll(".articulo").forEach(fruta => {
+
+                            fruta.textContent.toLowerCase().includes(e.target.value.toLowerCase()) ?
+                                fruta.classList.remove("filtro") :
+                                fruta.classList.add("filtro")
+                        })
+
+                    }
+                })
+            </script>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/Mousepad%20Gel%20Argom%20360%20ARG-AC-1222.jpg?alt=media&token=44ad87c1-fdd3-4de2-bc68-38eebc8624be" width="200" height="100"></td>
                 <td>ARGOM SOPORTE DE MUÑECA EN GEL PARA TECLADO NEGRO ARG-AC-1242</td>
                 <td>50</td>
                 <td>Q. 135</td>
+                <td>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/ARG-KB-0203.jpg?alt=media&token=3a19157e-0a56-49c6-9183-5721e3b3116f" [width]="200" [height]="100"></td>
                 <td>ARGOM TECLADO BLUETOOTH LIGERO PORTATIL INGLES ARG-KB-0203</td>
                 <td>50</td>
                 <td>Q. 135</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/26c20f6b-8793-490d-a034-9c9d8a6d364c._CR0%2C0%2C800%2C600_PT0_SX800__.jpg?alt=media&token=27ad5587-a7f4-4f26-9492-9011dccdc996" [width]="200" [height]="100"></td>
                 <td>TECLADO BLUETOOTH LOGITECH K480 CONECTA A 3 DISPOSITIVOS NEGRO ESPAÑOL</td>
                 <td>50</td>
                 <td>Q. 420</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MOU-XT-XTM175.jpg?alt=media&token=19aa85e9-9a3e-4e29-a015-a7ad9822321f" [width]="200" [height]="100"></td>
                 <td>MOUSE XTECH XTM-195 3 BOTONES USB CON LUZ ROJA 1000dpi</td>
                 <td>45</td>
                 <td>Q. 23</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MANHATTAN_177801_ICECAT_34922424.jpg?alt=media&token=c98cbd26-0505-46ec-b6cc-21112800bcf8" [width]="200" [height]="100"></td>
                 <td>MOUSE MANHATTAN 177801 EDGE OPTICO 3BOTONES C/SCROLL AZUL USB</td>
                 <td>25</td>
                 <td>Q. 45</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/p_7_5_6_756-audifono-redragon-ares-h120-on-ear-con-microfono1-64a640ed38f1c1307e16086462613554-640-0.jpg?alt=media&token=b29d0504-a99d-4c2b-9cdc-30407192888e"
                         [width]="200" [height]="100"></td>
                 <td>UDIFONO REDRAGON ARES H120 PARA GAMERS CON MICROFONO 3.5mm</td>
                 <td>80</td>
                 <td>Q. 125</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/XTC-515_1.jpg?alt=media&token=237647bc-03b5-4758-bb06-f6d17b13c84d" [width]="200" [height]="100"></td>
                 <td>ADAPTADOR XTECH XTC-515 CONECTOR TIPO C MACHO A USB 3.0 HEMBRA</td>
                 <td>10</td>
                 <td>Q. 32</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/AOC_22B2H.jpg?alt=media&token=4d03fec6-fda7-4601-ac54-a52c76978bb8" [width]="200" [height]="100"></td>
                 <td>MONITOR LED AOC 22B2HN 21.5" 1920x1080 VA HDMI</td>
                 <td>60</td>
                 <td>Q. 1,307</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/ms-ofis-yazilimlari_qq2-00085_-yazilim_142666_1.jpg?alt=media&token=d478bd37-488a-4e7e-b943-674faecf8c3a" [width]="200" [height]="100"></td>
                 <td>MICROSOFT OFFICE 365 PERSONAL 1 AÑO PC/MAC FORMATO ESD 1 DISPOSITIVO</td>
                 <td>90</td>
                 <td>Q. 443</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/MONITOR.jpg?alt=media&token=02b8fcd1-5893-440f-814d-24f422955a86" [width]="200" [height]="100"></td>
                 <td>MONITOR LED ASUS 23.8" VP249HE 75Hz IPS 1920 x 1080 HDMI</td>
                 <td>29</td>
                 <td>Q. 1,500o</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
-            <tr>
+            <tr class="articulo">
                 <td><img src="https://firebasestorage.googleapis.com/v0/b/tiendaangular-e50b2.appspot.com/o/DISCO%20DURO%20EXTERNO%20SEAGATE%20ONE%20TOUCH%201TB%20USB3%20ROJO.jpg?alt=media&token=36790e2c-28b4-4c65-9949-7ecfc9707eb0" [width]="200" [height]="100"></td>
                 <td>DISCO DURO EXTERNO SEAGATE ONE TOUCH 1TB USB3 ROJO</td>
                 <td>100</td>
                 <td>Q. 552</td>
+                <td>
+                    <div class="stars-outer">
+                        <div class="stars-inner">
+                        </div>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
